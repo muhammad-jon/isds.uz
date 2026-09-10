@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Phone, Menu, X, ArrowUpRight, ShieldCheck, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { Phone, PhoneCall, Menu, X, ArrowUpRight, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -43,13 +44,16 @@ export function Navbar({ onOpenCallback }: NavbarProps) {
             href="#"
             className="flex items-center gap-3 group transition-transform duration-200 hover:scale-[1.02]"
           >
-            <div className="relative flex items-center justify-center size-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-400 p-[1px] shadow-lg shadow-blue-500/20">
-              <div className="w-full h-full bg-zinc-950 rounded-[11px] flex items-center justify-center">
-                <span className="font-mono font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 text-lg">
-                  IS
-                </span>
-              </div>
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-xl blur-sm opacity-30 group-hover:opacity-75 transition duration-500" />
+            <div className="relative flex items-center justify-center size-10 rounded-xl bg-zinc-900/90 border border-zinc-800 p-1.5 shadow-lg shadow-blue-500/10 group-hover:border-blue-500/50 transition-colors">
+              <Image
+                src="/favicon.png"
+                alt="ISDS Logo"
+                width={26}
+                height={26}
+                className="object-contain"
+                priority
+              />
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-xl blur-sm opacity-20 group-hover:opacity-60 transition duration-500 -z-10" />
             </div>
 
             <div className="flex flex-col">
@@ -57,13 +61,6 @@ export function Navbar({ onOpenCallback }: NavbarProps) {
                 <span className="text-xl font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors">
                   ISDS<span className="text-blue-500">.UZ</span>
                 </span>
-                <Badge
-                  variant="outline"
-                  className="hidden sm:inline-flex text-[10px] py-0 px-2 h-4 border-emerald-500/30 bg-emerald-500/10 text-emerald-400 font-medium"
-                >
-                  <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse mr-1" />
-                  IT-Park
-                </Badge>
               </div>
               <span className="text-[10px] text-zinc-400 tracking-wider uppercase font-medium">
                 Enterprise IT Systems
@@ -102,7 +99,7 @@ export function Navbar({ onOpenCallback }: NavbarProps) {
               onClick={onOpenCallback}
               className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg shadow-blue-600/20 rounded-xl h-10 px-4 font-medium transition-all duration-200 cursor-pointer hover:shadow-blue-500/30 hover:scale-[1.02]"
             >
-              <Sparkles className="size-4 mr-1.5 text-blue-200" />
+              <PhoneCall className="size-4 mr-2 text-blue-100" />
               Заказать звонок
             </Button>
           </div>
@@ -171,6 +168,7 @@ export function Navbar({ onOpenCallback }: NavbarProps) {
               }}
               className="w-full bg-blue-600 hover:bg-blue-500 text-white h-11 rounded-xl font-medium shadow-lg shadow-blue-600/30"
             >
+              <PhoneCall className="size-4 mr-2" />
               Заказать звонок
             </Button>
           </div>

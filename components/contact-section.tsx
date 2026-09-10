@@ -61,14 +61,6 @@ export function ContactSection({ initialSubject }: ContactSectionProps) {
           {/* Left Column: Heading & Contact Info */}
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-4">
-              <Badge
-                variant="outline"
-                className="border-blue-500/30 bg-blue-500/10 text-blue-400 px-3 py-1 text-xs font-semibold uppercase tracking-wider"
-              >
-                <Sparkles className="size-3 mr-1.5" />
-                Свяжитесь с нами
-              </Badge>
-
               <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
                 Давайте работать?
               </h2>

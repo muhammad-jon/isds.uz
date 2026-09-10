@@ -64,13 +64,6 @@ export function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Title */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <Badge
-            variant="outline"
-            className="border-indigo-500/30 bg-indigo-500/10 text-indigo-400 px-3 py-1 text-xs font-semibold uppercase tracking-wider"
-          >
-            <Building2 className="size-3 mr-1.5" />
-            О компании
-          </Badge>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
             Принципы, которых мы придерживаемся
@@ -87,15 +80,8 @@ export function AboutSection() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
-              <div className="flex items-center gap-3">
-                <span className="size-3 rounded-full bg-emerald-400 animate-ping" />
-                <span className="text-xs uppercase tracking-widest font-bold text-emerald-400">
-                  Официальный статус
-                </span>
-              </div>
-
               <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                ISDS — Резиденты технологического парка IT-Park Узбекистана с 2021 года
+                ISDS - Резиденты технологического парка IT-Park Узбекистана с 2021 года
               </h3>
 
               <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">

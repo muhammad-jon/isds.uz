@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Phone, ShieldCheck, ArrowUp, Send, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -21,22 +22,18 @@ export function Footer({ onOpenCallback }: FooterProps) {
           {/* Col 1 & 2: Brand & IT-Park Status */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center size-9 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 p-[1px]">
-                <div className="w-full h-full bg-zinc-950 rounded-[11px] flex items-center justify-center">
-                  <span className="font-mono font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 text-base">
-                    IS
-                  </span>
-                </div>
+              <div className="flex items-center justify-center size-9 rounded-xl bg-zinc-900 border border-zinc-800 p-1.5 shadow-md shadow-blue-500/10">
+                <Image
+                  src="/favicon.png"
+                  alt="ISDS Logo"
+                  width={22}
+                  height={22}
+                  className="object-contain"
+                />
               </div>
               <span className="text-xl font-bold tracking-tight text-white">
                 ISDS<span className="text-blue-500">.UZ</span>
               </span>
-              <Badge
-                variant="outline"
-                className="text-[10px] py-0 px-2 h-4 border-emerald-500/30 bg-emerald-500/10 text-emerald-400 font-medium"
-              >
-                IT-Park
-              </Badge>
             </div>
 
             <p className="text-zinc-400 text-sm max-w-sm leading-relaxed">
@@ -136,7 +133,6 @@ export function Footer({ onOpenCallback }: FooterProps) {
           </div>
 
           <div className="flex items-center gap-6">
-            <span>Резидент IT-Park Узбекистана с 2021 г.</span>
             <button
               onClick={scrollToTop}
               className="flex items-center gap-1.5 text-zinc-400 hover:text-white transition-colors cursor-pointer"

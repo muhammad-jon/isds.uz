@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { ThreeHeroVisual } from "@/components/three-hero-visual";
 
 interface HeroSectionProps {
   onOpenCallback: () => void;
@@ -37,17 +38,6 @@ export function HeroSection({ onOpenCallback }: HeroSectionProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left: Main Copy & CTA */}
           <div className="lg:col-span-7 flex flex-col items-start text-left space-y-6">
-            {/* IT-Park Residency Badge */}
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-emerald-500/30 bg-emerald-950/40 px-3.5 py-1.5 backdrop-blur-md transition-all hover:border-emerald-500/50 group">
-              <span className="relative flex size-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full size-2.5 bg-emerald-500" />
-              </span>
-              <ShieldCheck className="size-4 text-emerald-400" />
-              <span className="text-xs font-semibold text-emerald-300 tracking-wide">
-                Резиденты IT-park с 2021 г.
-              </span>
-            </div>
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
@@ -125,129 +115,9 @@ export function HeroSection({ onOpenCallback }: HeroSectionProps) {
             </div>
           </div>
 
-          {/* Right: Modern High-tech Interactive Card Showcase */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Glowing gradient aura */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 rounded-3xl blur-xl opacity-30 animate-pulse" />
-
-              <div className="relative rounded-2xl border border-zinc-800/90 bg-zinc-950/90 backdrop-blur-2xl p-5 shadow-2xl shadow-black/80 space-y-4">
-                {/* Header bar of the mock system */}
-                <div className="flex items-center justify-between border-b border-zinc-800/80 pb-3">
-                  <div className="flex items-center gap-2">
-                    <div className="size-3 rounded-full bg-red-500/80" />
-                    <div className="size-3 rounded-full bg-yellow-500/80" />
-                    <div className="size-3 rounded-full bg-green-500/80" />
-                    <span className="ml-2 font-mono text-xs text-zinc-400 font-medium">
-                      isds-core-node // live
-                    </span>
-                  </div>
-                  <Badge
-                    variant="outline"
-                    className="border-emerald-500/40 bg-emerald-500/10 text-emerald-400 text-[11px] font-mono"
-                  >
-                    <Activity className="size-3 mr-1 animate-pulse" />
-                    ONLINE
-                  </Badge>
-                </div>
-
-                {/* Live System Architecture Matrix */}
-                <div className="space-y-2.5">
-                  {/* Item 1: Экосистема / ЭДО */}
-                  <div className="flex items-center justify-between p-3 rounded-xl bg-zinc-900/60 border border-zinc-800/70 hover:border-zinc-700 transition-colors">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                        <Layers className="size-4" />
-                      </div>
-                      <div>
-                        <div className="text-xs font-semibold text-white">
-                          Экосистема & ЭДО
-                        </div>
-                        <div className="text-[10px] text-zinc-400">
-                          Юридически значимый документооборот
-                        </div>
-                      </div>
-                    </div>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/15 text-blue-300 border border-blue-500/30">
-                      Active
-                    </span>
-                  </div>
-
-                  {/* Item 2: Face ID & Biometrics */}
-                  <div className="flex items-center justify-between p-3 rounded-xl bg-zinc-900/60 border border-zinc-800/70 hover:border-zinc-700 transition-colors">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-                        <Cpu className="size-4" />
-                      </div>
-                      <div>
-                        <div className="text-xs font-semibold text-white">
-                          FACE ID Идентификация
-                        </div>
-                        <div className="text-[10px] text-zinc-400">
-                          Нейросетевая биометрия & СКУД
-                        </div>
-                      </div>
-                    </div>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">
-                      99.8% Acc
-                    </span>
-                  </div>
-
-                  {/* Item 3: ERP & CRM Core */}
-                  <div className="flex items-center justify-between p-3 rounded-xl bg-zinc-900/60 border border-zinc-800/70 hover:border-zinc-700 transition-colors">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-                        <Database className="size-4" />
-                      </div>
-                      <div>
-                        <div className="text-xs font-semibold text-white">
-                          ERP & Custom CRM
-                        </div>
-                        <div className="text-[10px] text-zinc-400">
-                          Финансы, скоринг, лизинг, аналитика
-                        </div>
-                      </div>
-                    </div>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
-                      Sync OK
-                    </span>
-                  </div>
-                </div>
-
-                {/* System Telemetry stats bar */}
-                <div className="rounded-xl bg-black/40 border border-zinc-800/60 p-3 grid grid-cols-3 gap-2 text-center">
-                  <div>
-                    <div className="text-[10px] text-zinc-400">Отклик API</div>
-                    <div className="text-xs font-mono font-bold text-emerald-400">
-                      ~18 ms
-                    </div>
-                  </div>
-                  <div className="border-x border-zinc-800">
-                    <div className="text-[10px] text-zinc-400">Шифрование</div>
-                    <div className="text-xs font-mono font-bold text-blue-400">
-                      TLS / RSA
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-[10px] text-zinc-400">Безопасность</div>
-                    <div className="text-xs font-mono font-bold text-indigo-400">
-                      Enterprise
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating bottom badge */}
-                <div className="flex items-center justify-between pt-1">
-                  <div className="flex items-center gap-1.5 text-zinc-400 text-xs">
-                    <CheckCircle className="size-3.5 text-emerald-400" />
-                    <span>Банковский стандарт защиты</span>
-                  </div>
-                  <span className="text-[10px] text-zinc-400 font-mono">
-                    v3.4.8-prod
-                  </span>
-                </div>
-              </div>
-            </div>
+          {/* Right: High-tech 3D Holographic Core Animation (Three.js) */}
+          <div className="lg:col-span-5 relative flex items-center justify-center">
+            <ThreeHeroVisual />
           </div>
         </div>
       </div>

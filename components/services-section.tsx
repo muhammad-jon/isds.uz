@@ -101,20 +101,13 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <Badge
-            variant="outline"
-            className="border-blue-500/30 bg-blue-500/10 text-blue-400 px-3 py-1 text-xs font-semibold uppercase tracking-wider"
-          >
-            <Sparkles className="size-3 mr-1.5" />
-            Наши компетенции
-          </Badge>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
             Услуги компании
           </h2>
 
           <p className="text-base sm:text-lg text-zinc-400 leading-relaxed">
-            Реализуем комплексные цифровые решения под ключ — от проектирования архитектуры и UX до запуска и круглосуточного сопровождения.
+            Реализуем комплексные цифровые решения под ключ - от проектирования архитектуры и UX до запуска и круглосуточного сопровождения.
           </p>
         </div>
 
