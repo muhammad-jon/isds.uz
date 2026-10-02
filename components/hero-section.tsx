@@ -138,7 +138,7 @@ export function HeroSection({ onOpenCallback, isLoaded = false }: HeroSectionPro
               <a href="#contact" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] hover:from-[#0873b6] hover:to-[#22448f] text-white font-semibold h-12 px-7 rounded-xl shadow-xl shadow-[#0873b6]/25 transition-all duration-200 hover:scale-[1.02] cursor-pointer text-base"
+                  className="w-full sm:w-auto bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] hover:from-[#0873b6] hover:to-[#22448f] text-white font-semibold h-12 px-7 rounded-xl transition-all duration-200 hover:scale-[1.02] cursor-pointer text-base"
                 >
                   Обсудить проект
                   <ArrowRight className="size-4 ml-2" />

@@ -105,7 +105,7 @@ export function CallbackDialog({
             <Button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] hover:from-[#0873b6] hover:to-[#22448f] text-white font-medium h-10 shadow-lg shadow-[#0873b6]/25 transition-all cursor-pointer"
+              className="w-full bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] hover:from-[#0873b6] hover:to-[#22448f] text-white font-medium h-10  transition-all cursor-pointer"
             >
               {loading ? (
                 <>

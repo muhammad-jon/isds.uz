@@ -468,15 +468,15 @@ export function ProjectsSection({ onSelectProject }: ProjectsSectionProps) {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`group flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer ${isActive
-                    ? "bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] text-white shadow-lg shadow-[#0873b6]/25 scale-105"
-                    : "bg-zinc-900/80 text-zinc-400 hover:text-white hover:bg-zinc-800 border border-zinc-800"
+                  ? "bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] text-white scale-105"
+                  : "bg-zinc-900/80 text-zinc-400 hover:text-white hover:bg-zinc-800 border border-zinc-800"
                   }`}
               >
                 <span>{tab.label}</span>
                 <span
                   className={`text-xs px-2 py-0.5 rounded-full font-mono font-bold ${isActive
-                      ? "bg-white/20 text-white"
-                      : "bg-zinc-800 text-zinc-400 group-hover:bg-zinc-700"
+                    ? "bg-white/20 text-white"
+                    : "bg-zinc-800 text-zinc-400 group-hover:bg-zinc-700"
                     }`}
                 >
                   {tab.count}
@@ -629,7 +629,7 @@ export function ProjectsSection({ onSelectProject }: ProjectsSectionProps) {
                   setSelectedProject(null);
                 }}
               >
-                <Button className="w-full sm:w-auto bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] hover:from-[#0873b6] hover:to-[#22448f] text-white font-medium cursor-pointer shadow-lg shadow-[#0873b6]/20">
+                <Button className="w-full sm:w-auto bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] hover:from-[#0873b6] hover:to-[#22448f] text-white font-medium cursor-pointer">
                   Обсудить этот проект
                   <ArrowRight className="size-4 ml-1.5" />
                 </Button>

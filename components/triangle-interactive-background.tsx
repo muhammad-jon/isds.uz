@@ -270,7 +270,7 @@ export function TriangleInteractiveBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none opacity-90"
+      className="fixed inset-0 pointer-events-none opacity-80"
       style={{
         position: "fixed",
         top: 0,
