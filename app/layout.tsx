@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ISDS | IT системы для лидеров рынка | Резиденты IT-Park",
+  title: "ISDS | IT системы для лидеров рынка | Резиденты Cyber Park",
   description:
-    "Поможем произвести автоматизацию бизнес-процессов и увеличить прибыль. Разработка высоконагруженных IT систем, мобильных приложений, ERP и CRM решений. Резиденты IT-Park с 2021 года.",
+    "Поможем произвести автоматизацию бизнес-процессов и увеличить прибыль. Разработка высоконагруженных IT систем, мобильных приложений, ERP и CRM решений. Резиденты Cyber Park с 2021 года.",
   icons: {
     icon: [
       { url: "/favicon.png", type: "image/png" },

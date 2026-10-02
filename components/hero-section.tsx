@@ -172,7 +172,7 @@ export function HeroSection({ onOpenCallback, isLoaded = false }: HeroSectionPro
                   2021<span className="text-emerald-400 font-sans text-xs ml-1 font-semibold uppercase">г.</span>
                 </div>
                 <div className="text-xs text-zinc-400 font-medium mt-0.5 whitespace-nowrap">
-                  В IT-Park Узбекистана
+                  В Cyber Park Узбекистана
                 </div>
               </div>
 

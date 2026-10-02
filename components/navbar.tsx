@@ -122,7 +122,7 @@ export function Navbar({ onOpenCallback }: NavbarProps) {
               className="text-xs border-emerald-500/30 bg-emerald-500/10 text-emerald-400 py-0.5"
             >
               <ShieldCheck className="size-3 mr-1" />
-              Резиденты IT-park с 2021 г.
+              Резиденты Cyber Park с 2021 г.
             </Badge>
           </div>
 

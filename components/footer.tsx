@@ -29,7 +29,7 @@ export function Footer({ onOpenCallback }: FooterProps) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
-          {/* Col 1 & 2: Brand & IT-Park Status */}
+          {/* Col 1 & 2: Brand & Cyber Park Status */}
           <div className="lg:col-span-2 space-y-4">
             <a href="#" className="inline-block group" aria-label="ISDS.UZ">
               <Image
@@ -112,7 +112,7 @@ export function Footer({ onOpenCallback }: FooterProps) {
                 +998 97 711 21 16
               </a>
               <div className="text-xs text-zinc-400">
-                г. Ташкент, IT-Park
+                г. Ташкент
               </div>
             </div>
 

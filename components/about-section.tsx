@@ -136,14 +136,14 @@ export function AboutSection() {
           </p>
         </div>
 
-        {/* Big Credibility Box: IT-Park resident since 2021 */}
+        {/* Big Credibility Box: Cyber Park resident since 2021 */}
         <div className=" about-credibility-box mb-14 rounded-2xl border border-zinc-800 bg-gradient-to-r from-zinc-950 via-zinc-900/90 to-zinc-950 p-6 sm:p-10 shadow-2xl relative overflow-hidden">
           <div className="absolute -right-10 -bottom-10 w-96 h-96 bg-[#0873b6]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
               <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                ISDS - Резиденты технологического парка IT-Park Узбекистана с 2021 года
+                ISDS - Резиденты технологического парка Cyber Park Узбекистана с 2021 года
               </h3>
 
               <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
@@ -157,7 +157,7 @@ export function AboutSection() {
                 </div>
                 <div className="flex items-center gap-2 text-sm text-zinc-300 whitespace-nowrap">
                   <CheckCircle className="size-4 text-emerald-400 shrink-0" />
-                  <span className="whitespace-nowrap">Стандарты IT-Park</span>
+                  <span className="whitespace-nowrap">Стандарты Cyber Park</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-zinc-300 whitespace-nowrap">
                   <CheckCircle className="size-4 text-emerald-400 shrink-0" />
