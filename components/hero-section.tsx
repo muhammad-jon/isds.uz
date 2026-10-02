@@ -169,7 +169,7 @@ export function HeroSection({ onOpenCallback, isLoaded = false }: HeroSectionPro
 
               <div className="hero-stats-elem">
                 <div className="text-2xl sm:text-3xl font-bold font-mono text-white flex items-center">
-                  2021<span className="text-emerald-400 font-sans text-xs ml-1 font-semibold uppercase">г.</span>
+                  2023<span className="text-emerald-400 font-sans text-xs ml-1 font-semibold uppercase">г.</span>
                 </div>
                 <div className="text-xs text-zinc-400 font-medium mt-0.5 whitespace-nowrap">
                   В Cyber Park Узбекистана

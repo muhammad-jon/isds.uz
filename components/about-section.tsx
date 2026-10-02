@@ -136,21 +136,22 @@ export function AboutSection() {
           </p>
         </div>
 
-        {/* Big Credibility Box: Cyber Park resident since 2021 */}
-        <div className=" about-credibility-box mb-14 rounded-2xl border border-zinc-800 bg-gradient-to-r from-zinc-950 via-zinc-900/90 to-zinc-950 p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+        {/* Big Credibility Box: Cyber Park resident & 5+ Years Milestones */}
+        <div className="about-credibility-box mb-14 rounded-2xl border border-zinc-800 bg-gradient-to-r from-zinc-950 via-zinc-900/90 to-zinc-950 p-6 sm:p-10 shadow-2xl relative overflow-hidden">
           <div className="absolute -right-10 -bottom-10 w-96 h-96 bg-[#0873b6]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8 space-y-4">
-              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                ISDS - Резиденты технологического парка Cyber Park Узбекистана с 2021 года
+            {/* Left: Enterprise Capabilities & Commitments */}
+            <div className="lg:col-span-7 space-y-4">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight">
+                ISDS — Экспертиза в разработке масштабных IT-систем
               </h3>
 
               <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
                 Специализируемся на проектировании, разработке и сопровождении сложных enterprise-систем: банковский сектор, лизинговые и страховые организации, электронный документооборот, биометрические Face ID комплексы и масштабные ERP решения.
               </p>
 
-              <div className="flex flex-wrap gap-3 sm:gap-4 pt-2">
+              <div className="flex flex-wrap gap-x-6 gap-y-2.5 pt-2">
                 <div className="flex items-center gap-2 text-sm text-zinc-300 whitespace-nowrap">
                   <CheckCircle className="size-4 text-emerald-400 shrink-0" />
                   <span className="whitespace-nowrap">Прозрачный договор и NDA</span>
@@ -166,13 +167,54 @@ export function AboutSection() {
               </div>
             </div>
 
-            <div className="lg:col-span-4 flex flex-col items-center justify-center p-6 rounded-xl bg-zinc-900/80 border border-zinc-800 text-center space-y-3">
-              <Award className="size-12 text-blue-400" />
-              <div className="text-3xl font-black text-white font-mono">
-                2021 - 2026
+            {/* Right: Two Distinct Milestone Blocks */}
+            <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Block 1: Cyber Park Resident (2023 - 2026) */}
+              <div className="p-5 rounded-2xl bg-zinc-900/90 border border-emerald-500/25 hover:border-emerald-500/50 transition-all duration-300 flex flex-col justify-between space-y-3 relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none group-hover:bg-emerald-500/20 transition-all" />
+                <div className="flex items-center justify-between">
+                  <div className="size-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                    <ShieldCheck className="size-5" />
+                  </div>
+                  <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    Аккредитация
+                  </span>
+                </div>
+                <div>
+                  <div className="text-2xl font-black text-white font-mono tracking-tight">
+                    2023 — 2026
+                  </div>
+                  <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider mt-1">
+                    Резиденты Cyber Park
+                  </div>
+                  <p className="text-[11px] text-zinc-400 mt-1 leading-snug">
+                    Технологический парк кибербезопасности Узбекистана
+                  </p>
+                </div>
               </div>
-              <div className="text-xs font-semibold text-zinc-400 uppercase tracking-wider">
-                5+ лет стабильной разработки и роста
+
+              {/* Block 2: 2021 dan hozirgacha (2026) */}
+              <div className="p-5 rounded-2xl bg-zinc-900/90 border border-blue-500/25 hover:border-blue-500/50 transition-all duration-300 flex flex-col justify-between space-y-3 relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-[#0873b6]/10 rounded-full blur-2xl pointer-events-none group-hover:bg-[#0873b6]/20 transition-all" />
+                <div className="flex items-center justify-between">
+                  <div className="size-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center">
+                    <Award className="size-5" />
+                  </div>
+                  <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                    Опыт
+                  </span>
+                </div>
+                <div>
+                  <div className="text-2xl font-black text-white font-mono tracking-tight">
+                    2021 — 2026
+                  </div>
+                  <div className="text-xs font-bold text-zinc-200 uppercase tracking-wider mt-1">
+                    5+ лет разработки
+                  </div>
+                  <p className="text-[11px] text-zinc-400 mt-1 leading-snug">
+                    Стабильный рост, зрелые IT-процессы и надежность
+                  </p>
+                </div>
               </div>
             </div>
           </div>
