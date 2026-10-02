@@ -1,5 +1,5 @@
 # Stage 1: Base image with pnpm enabled
-FROM node:20-alpine AS base
+FROM node:22-alpine AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN apk add --no-cache libc6-compat
@@ -25,7 +25,7 @@ ENV NODE_ENV=production
 RUN pnpm build
 
 # Stage 4: Production runner (minimal size)
-FROM node:20-alpine AS runner
+FROM node:22-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
