@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Group } from "three";
 import { OrbitControls } from "@react-three/drei";
@@ -6,9 +6,11 @@ import { Globe } from "../globe";
 import { SceneLights } from "../demos/scene-lights";
 import { GlobeRouteAnimation } from "@/lib/types";
 import { GLOBE_DEFAULTS } from "@/lib/config";
+import { gsap } from "gsap";
 
 interface RotatingGlobeProps {
   routes: GlobeRouteAnimation[][];
+  isLoaded?: boolean;
   rotationSpeed?: number;
   paused?: boolean;
   tilt?: number;
@@ -25,6 +27,7 @@ interface RotatingGlobeProps {
 
 const RotatingGlobe = ({
   routes,
+  isLoaded = true,
   rotationSpeed = GLOBE_DEFAULTS.rotationSpeed,
   paused = false,
   tilt = GLOBE_DEFAULTS.tilt,
@@ -39,6 +42,35 @@ const RotatingGlobe = ({
   directionalIntensity = GLOBE_DEFAULTS.directionalIntensity,
 }: RotatingGlobeProps) => {
   const globeRef = useRef<Group>(null);
+  const hasAnimatedRef = useRef(false);
+
+  useEffect(() => {
+    if (!globeRef.current) return;
+
+    if (!isLoaded) {
+      globeRef.current.scale.set(0.001, 0.001, 0.001);
+      return;
+    }
+
+    if (hasAnimatedRef.current) {
+      globeRef.current.scale.set(1, 1, 1);
+      return;
+    }
+
+    hasAnimatedRef.current = true;
+    gsap.fromTo(
+      globeRef.current.scale,
+      { x: 0.001, y: 0.001, z: 0.001 },
+      {
+        x: 1,
+        y: 1,
+        z: 1,
+        duration: 1.5,
+        delay: 0.1,
+        ease: "power3.out",
+      }
+    );
+  }, [isLoaded]);
 
   useFrame(() => {
     if (globeRef.current && !paused) {

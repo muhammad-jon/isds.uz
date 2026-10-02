@@ -461,14 +461,14 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/5 to-transparent pointer-events-none" />
 
       {/* Floating luminous sphere with GSAP scroll parallax scrub */}
-      <div className="service-ambient-glow absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-gradient-to-tr from-blue-600/10 via-indigo-600/10 to-cyan-500/10 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="service-ambient-glow absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[700px] h-[450px] bg-gradient-to-tr from-[#22448f]/15 via-[#0873b6]/15 to-[#43609e]/10 rounded-full blur-[140px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="service-header-elem text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
             Услуги{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#89a8d6] via-[#0873b6] to-[#43609e]">
               компании
             </span>
           </h2>

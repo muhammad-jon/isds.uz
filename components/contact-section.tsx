@@ -122,7 +122,7 @@ export function ContactSection({ initialSubject }: ContactSectionProps) {
 
               <h2 className="contact-header-elem text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
                 Давайте{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#89a8d6] via-[#0873b6] to-[#43609e]">
                   работать?
                 </span>
               </h2>
@@ -266,7 +266,7 @@ export function ContactSection({ initialSubject }: ContactSectionProps) {
                   <Button
                     type="submit"
                     disabled={loading}
-                    className="w-full h-12 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold rounded-xl text-base shadow-xl shadow-blue-600/30 transition-all duration-200 cursor-pointer"
+                    className="w-full h-12 bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] hover:from-[#0873b6] hover:to-[#22448f] text-white font-semibold rounded-xl text-base shadow-xl shadow-[#0873b6]/30 transition-all duration-200 cursor-pointer"
                   >
                     {loading ? (
                       <>

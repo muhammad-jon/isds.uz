@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar } from "@/components/navbar";
 import { HeroSection } from "@/components/hero-section";
 import { ServicesSection } from "@/components/services-section";
@@ -10,10 +10,20 @@ import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { CallbackDialog } from "@/components/callback-dialog";
 import { TriangleInteractiveBackground } from "@/components/triangle-interactive-background";
+import { Preloader } from "@/components/preloader";
 
 export default function Home() {
   const [callbackOpen, setCallbackOpen] = useState(false);
   const [contactSubject, setContactSubject] = useState<string>("");
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Safety fallback in case preloader is delayed or unmounted
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 4500);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleOpenCallback = () => {
     setCallbackOpen(true);
@@ -29,6 +39,9 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-[#07090e] text-zinc-100 flex flex-col selection:bg-blue-600/30 selection:text-blue-300">
+      {/* Premium initial page preloader / splash screen */}
+      <Preloader onLoaded={() => setIsLoaded(true)} />
+
       {/* Full-page interactive glowing triangle pattern background */}
       <TriangleInteractiveBackground />
 
@@ -38,7 +51,7 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-1 flex flex-col relative z-10">
         {/* 1. Hero Section */}
-        <HeroSection onOpenCallback={handleOpenCallback} />
+        <HeroSection onOpenCallback={handleOpenCallback} isLoaded={isLoaded} />
 
         {/* 2. Services Section */}
         <ServicesSection onSelectService={handleSelectServiceOrProject} />

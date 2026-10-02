@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { IsdsLogo } from "@/components/isds-logo";
 import { Phone, ShieldCheck, ArrowUp, Send, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -18,7 +19,7 @@ export function Footer({ onOpenCallback }: FooterProps) {
   return (
     <footer className="relative border-t border-zinc-800/80 bg-zinc-950/75 backdrop-blur-xl text-zinc-400 text-sm overflow-hidden">
       {/* Top glowing gradient border line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0873b6]/40 to-transparent pointer-events-none" />
 
       {/* Ambient background glows matching header/hero */}
       <div className="absolute inset-0 max-w-7xl mx-auto pointer-events-none -z-10 overflow-hidden">
@@ -32,13 +33,7 @@ export function Footer({ onOpenCallback }: FooterProps) {
           {/* Col 1 & 2: Brand & IT-Park Status */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3.5">
-              <Image
-                src="/favicon.png"
-                alt="ISDS Logo"
-                width={36}
-                height={36}
-                className="h-10 w-auto object-contain drop-shadow-[0_0_12px_rgba(59,130,246,0.25)]"
-              />
+              <IsdsLogo className="h-10 w-auto drop-shadow-[0_0_12px_rgba(59,130,246,0.25)]" />
               <span className="text-xl font-bold tracking-tight text-white">
                 ISDS<span className="text-blue-500">.UZ</span>
               </span>

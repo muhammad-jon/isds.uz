@@ -125,7 +125,7 @@ export function AboutSection() {
 
           <h2 className="about-header-elem text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
             Принципы, которых{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-blue-400 to-cyan-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#89a8d6] via-[#0873b6] to-[#43609e]">
               мы придерживаемся
             </span>
           </h2>
@@ -138,7 +138,7 @@ export function AboutSection() {
 
         {/* Big Credibility Box: IT-Park resident since 2021 */}
         <div className="about-credibility-box mb-14 rounded-2xl border border-zinc-800 bg-gradient-to-r from-zinc-950 via-zinc-900/90 to-zinc-950 p-6 sm:p-10 shadow-2xl relative overflow-hidden">
-          <div className="absolute -right-10 -bottom-10 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -right-10 -bottom-10 w-96 h-96 bg-[#0873b6]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">

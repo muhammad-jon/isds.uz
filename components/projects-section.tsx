@@ -448,7 +448,7 @@ export function ProjectsSection({ onSelectProject }: ProjectsSectionProps) {
 
           <h2 className="project-header-elem text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
             Проекты и{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#89a8d6] via-[#0873b6] to-[#43609e]">
               продукты
             </span>
           </h2>
@@ -468,7 +468,7 @@ export function ProjectsSection({ onSelectProject }: ProjectsSectionProps) {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`group flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer ${isActive
-                    ? "bg-blue-600 text-white shadow-lg shadow-blue-600/25 scale-105"
+                    ? "bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] text-white shadow-lg shadow-[#0873b6]/25 scale-105"
                     : "bg-zinc-900/80 text-zinc-400 hover:text-white hover:bg-zinc-800 border border-zinc-800"
                   }`}
               >
@@ -629,7 +629,7 @@ export function ProjectsSection({ onSelectProject }: ProjectsSectionProps) {
                   setSelectedProject(null);
                 }}
               >
-                <Button className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white font-medium cursor-pointer">
+                <Button className="w-full sm:w-auto bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] hover:from-[#0873b6] hover:to-[#22448f] text-white font-medium cursor-pointer shadow-lg shadow-[#0873b6]/20">
                   Обсудить этот проект
                   <ArrowRight className="size-4 ml-1.5" />
                 </Button>

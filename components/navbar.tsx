@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { IsdsLogo } from "@/components/isds-logo";
 import { Phone, PhoneCall, Menu, X, ArrowUpRight, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -43,14 +44,7 @@ export function Navbar({ onOpenCallback }: NavbarProps) {
             href="#"
             className="flex items-center gap-3 group transition-transform duration-200 hover:scale-[1.02]"
           >
-            <Image
-              src="/favicon.png"
-              alt="ISDS Logo"
-              width={36}
-              height={36}
-              className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(59,130,246,0.3)]"
-              priority
-            />
+            <IsdsLogo className="h-10 w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(59,130,246,0.35)]" />
 
             <div className="flex flex-col">
               <div className="flex items-center gap-2">
@@ -93,7 +87,7 @@ export function Navbar({ onOpenCallback }: NavbarProps) {
 
             <Button
               onClick={onOpenCallback}
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg shadow-blue-600/20 rounded-xl h-10 px-4 font-medium transition-all duration-200 cursor-pointer hover:shadow-blue-500/30 hover:scale-[1.02]"
+              className="bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] hover:from-[#0873b6] hover:to-[#22448f] text-white shadow-lg shadow-[#0873b6]/20 rounded-xl h-10 px-4 font-medium transition-all duration-200 cursor-pointer hover:shadow-[#0873b6]/35 hover:scale-[1.02]"
             >
               <PhoneCall className="size-4 mr-2 text-blue-100" />
               Заказать звонок
@@ -162,7 +156,7 @@ export function Navbar({ onOpenCallback }: NavbarProps) {
                 setMobileMenuOpen(false);
                 onOpenCallback();
               }}
-              className="w-full bg-blue-600 hover:bg-blue-500 text-white h-11 rounded-xl font-medium shadow-lg shadow-blue-600/30"
+              className="w-full bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] hover:from-[#0873b6] hover:to-[#22448f] text-white h-11 rounded-xl font-medium shadow-lg shadow-[#0873b6]/30 transition-all duration-200 cursor-pointer"
             >
               <PhoneCall className="size-4 mr-2" />
               Заказать звонок

@@ -27,36 +27,82 @@ if (typeof window !== "undefined") {
 
 interface HeroSectionProps {
   onOpenCallback: () => void;
+  isLoaded?: boolean;
 }
 
-export function HeroSection({ onOpenCallback }: HeroSectionProps) {
+export function HeroSection({ onOpenCallback, isLoaded = false }: HeroSectionProps) {
   const heroRef = useRef<HTMLElement>(null);
 
   useGSAP(
     () => {
-      // Hero headline, badge, and copy blur reveal
-      gsap.from(".hero-anim-elem", {
-        y: 45,
-        opacity: 0,
-        filter: "blur(14px)",
-        stagger: 0.12,
-        duration: 1,
-        ease: "power3.out",
-        clearProps: "filter,transform",
-      });
+      if (!isLoaded) {
+        // Keep elements hidden while preloader is active
+        gsap.set(".hero-anim-elem", {
+          y: 45,
+          opacity: 0,
+          filter: "blur(14px)",
+        });
+        gsap.set(".hero-stats-elem", {
+          y: 30,
+          opacity: 0,
+        });
+        gsap.set(".hero-globe-elem", {
+          opacity: 0,
+        });
+        return;
+      }
 
-      // Stats row staggered reveal
-      gsap.from(".hero-stats-elem", {
-        y: 30,
-        opacity: 0,
-        stagger: 0.08,
-        duration: 0.8,
-        delay: 0.5,
-        ease: "power3.out",
-        clearProps: "transform,opacity",
-      });
+      // Hero headline, subtitle, and CTA buttons blur reveal
+      const tl = gsap.timeline({ delay: 0.15 });
+
+      tl.fromTo(
+        ".hero-anim-elem",
+        {
+          y: 45,
+          opacity: 0,
+          filter: "blur(14px)",
+        },
+        {
+          y: 0,
+          opacity: 1,
+          filter: "blur(0px)",
+          stagger: 0.12,
+          duration: 1,
+          ease: "power3.out",
+          clearProps: "filter,transform",
+        }
+      )
+        .fromTo(
+          ".hero-globe-elem",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+            duration: 1.2,
+            ease: "power2.out",
+            clearProps: "opacity",
+          },
+          "-=0.9"
+        )
+        .fromTo(
+          ".hero-stats-elem",
+          {
+            y: 30,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.08,
+            duration: 0.8,
+            ease: "power3.out",
+            clearProps: "transform,opacity",
+          },
+          "-=0.6"
+        );
     },
-    { scope: heroRef }
+    { dependencies: [isLoaded], scope: heroRef }
   );
 
   return (
@@ -77,7 +123,7 @@ export function HeroSection({ onOpenCallback }: HeroSectionProps) {
             {/* Headline */}
             <h1 className="hero-anim-elem text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
               IT системы для{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-300">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#89a8d6] via-[#0873b6] to-[#43609e]">
                 лидеров рынка
               </span>
             </h1>
@@ -92,7 +138,7 @@ export function HeroSection({ onOpenCallback }: HeroSectionProps) {
               <a href="#contact" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold h-12 px-7 rounded-xl shadow-xl shadow-blue-600/25 transition-all duration-200 hover:scale-[1.02] cursor-pointer text-base"
+                  className="w-full sm:w-auto bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] hover:from-[#0873b6] hover:to-[#22448f] text-white font-semibold h-12 px-7 rounded-xl shadow-xl shadow-[#0873b6]/25 transition-all duration-200 hover:scale-[1.02] cursor-pointer text-base"
                 >
                   Обсудить проект
                   <ArrowRight className="size-4 ml-2" />
@@ -151,11 +197,11 @@ export function HeroSection({ onOpenCallback }: HeroSectionProps) {
           </div>
 
           {/* Right: Interactive 3D WebGL Animated Globe */}
-          <div className="lg:col-span-5 relative flex items-center justify-center w-full min-h-[480px] sm:min-h-[560px] lg:min-h-[620px]">
+          <div className="hero-globe-elem lg:col-span-5 relative flex items-center justify-center w-full min-h-[480px] sm:min-h-[560px] lg:min-h-[620px]">
             {/* Ambient background glows */}
-            <div className="absolute inset-4 bg-gradient-to-tr from-blue-600/20 via-cyan-500/15 to-indigo-600/20 rounded-full blur-[90px] pointer-events-none -z-10 animate-pulse duration-[4000ms]" />
+            <div className="absolute inset-4 bg-gradient-to-tr from-[#22448f]/25 via-[#0873b6]/20 to-[#43609e]/20 rounded-full blur-[90px] pointer-events-none -z-10 animate-pulse duration-[4000ms]" />
 
-            <WebGLGlobe />
+            <WebGLGlobe isLoaded={isLoaded} />
           </div>
         </div>
       </div>

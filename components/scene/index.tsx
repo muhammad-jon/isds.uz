@@ -13,9 +13,10 @@ const oceanRoutes = oceanRoutesJson as unknown as GlobeRouteAnimation[];
 
 interface SceneProps {
   className?: string;
+  isLoaded?: boolean;
 }
 
-export function Scene({ className }: SceneProps) {
+export function Scene({ className, isLoaded = true }: SceneProps) {
   return (
     <div
       className={
@@ -35,6 +36,7 @@ export function Scene({ className }: SceneProps) {
         style={{ width: "100%", height: "100%" }}
       >
         <RotatingGlobe
+          isLoaded={isLoaded}
           routes={[...airRouteGroups, oceanRoutes]}
           rotationSpeed={GLOBE_DEFAULTS.rotationSpeed}
           paused={false}
