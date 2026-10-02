@@ -1,0 +1,48 @@
+stages: [build, deploy]
+
+variables:
+  IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+  IMAGE_LATEST: $CI_REGISTRY_IMAGE:latest
+  CONTAINER_NAME: isds-web
+  APP_PORT: "23300"
+
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+build:
+  stage: build
+  tags: [application_build_runner]
+  script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
+    - docker build --pull --label "org.opencontainers.image.revision=$CI_COMMIT_SHA" -t "$IMAGE_TAG" -t "$IMAGE_LATEST" .
+    - docker push "$IMAGE_TAG"
+    - docker push "$IMAGE_LATEST"
+  after_script:
+    - docker image prune -f
+
+deploy:
+  stage: deploy
+  tags: [app_prod_server_runner]
+  needs: [build]
+  resource_group: production
+  environment:
+    name: production
+    url: https://isds.uz
+  script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
+    - docker pull "$IMAGE_TAG"
+    - docker rm -f "$CONTAINER_NAME" || true
+    # bound to the internal address only: reachable from the nginx-ui proxy (10.1.1.100)
+    - >-
+      docker run -d --name "$CONTAINER_NAME" --restart unless-stopped
+      -p "10.1.1.104:$APP_PORT:3000"
+      "$IMAGE_TAG"
+    - |
+      ok=0
+      for i in $(seq 1 40); do
+        if curl -fsS -o /dev/null "http://10.1.1.104:$APP_PORT/"; then ok=1; break; fi
+        sleep 3
+      done
+      if [ "$ok" != 1 ]; then docker logs --tail 200 "$CONTAINER_NAME"; exit 1; fi
+    - docker images "$CI_REGISTRY_IMAGE" --format '{{.Repository}}:{{.Tag}}' | grep -v ":$CI_COMMIT_SHORT_SHA$" | xargs -r docker rmi || true
