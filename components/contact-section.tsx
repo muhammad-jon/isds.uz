@@ -266,7 +266,7 @@ export function ContactSection({ initialSubject }: ContactSectionProps) {
                   <Button
                     type="submit"
                     disabled={loading}
-                    className="w-full h-12 bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] hover:from-[#0873b6] hover:to-[#22448f] text-white font-semibold rounded-xl text-base shadow-xl shadow-[#0873b6]/30 transition-all duration-200 cursor-pointer"
+                    className="w-full h-12 bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] hover:from-[#0873b6] hover:to-[#22448f] text-white font-semibold rounded-xl text-base transition-all duration-200 cursor-pointer"
                   >
                     {loading ? (
                       <>

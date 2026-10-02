@@ -84,7 +84,7 @@ export function Navbar({ onOpenCallback }: NavbarProps) {
 
             <Button
               onClick={onOpenCallback}
-              className="bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] hover:from-[#0873b6] hover:to-[#22448f] text-white shadow-lg shadow-[#0873b6]/20 rounded-xl h-10 px-4 font-medium transition-all duration-200 cursor-pointer hover:shadow-[#0873b6]/35 hover:scale-[1.02]"
+              className="bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] hover:from-[#0873b6] hover:to-[#22448f] text-white  rounded-xl h-10 px-4 font-medium transition-all duration-200 cursor-pointer hover:shadow-[#0873b6]/35 hover:scale-[1.02]"
             >
               <PhoneCall className="size-4 mr-2 text-blue-100" />
               Заказать звонок
@@ -153,7 +153,7 @@ export function Navbar({ onOpenCallback }: NavbarProps) {
                 setMobileMenuOpen(false);
                 onOpenCallback();
               }}
-              className="w-full bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] hover:from-[#0873b6] hover:to-[#22448f] text-white h-11 rounded-xl font-medium shadow-lg shadow-[#0873b6]/30 transition-all duration-200 cursor-pointer"
+              className="w-full bg-gradient-to-r from-[#22448f] via-[#0873b6] to-[#43609e] hover:from-[#0873b6] hover:to-[#22448f] text-white h-11 rounded-xl font-medium transition-all duration-200 cursor-pointer"
             >
               <PhoneCall className="size-4 mr-2" />
               Заказать звонок
