@@ -33,6 +33,8 @@ export async function GET(
     return NextResponse.redirect(targetUrl, { status: 307 });
   }
 
-  // Fallback to home page if slug is not matched or when visiting /qr
-  return NextResponse.redirect(new URL("/", request.url), { status: 307 });
+  // Fallback to home page if slug is not matched or when visiting /qr.
+  // Relative Location: behind the reverse proxy request.url points to the
+  // container bind address (0.0.0.0:3000), not to the public host.
+  return new NextResponse(null, { status: 307, headers: { Location: "/" } });
 }
