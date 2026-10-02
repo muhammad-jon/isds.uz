@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { IsdsLogo } from "@/components/isds-logo";
 import { Phone, PhoneCall, Menu, X, ArrowUpRight, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -39,23 +38,21 @@ export function Navbar({ onOpenCallback }: NavbarProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo & IT-Park badge */}
+          {/* Logo & Brand */}
           <a
             href="#"
-            className="flex items-center gap-3 group transition-transform duration-200 hover:scale-[1.02]"
+            className="flex items-center group transition-transform duration-200 hover:scale-[1.02]"
+            aria-label="ISDS.UZ"
           >
-            <IsdsLogo className="h-10 w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(59,130,246,0.35)]" />
-
-            <div className="flex flex-col">
-              <div className="flex items-center gap-2">
-                <span className="text-xl font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors">
-                  ISDS<span className="text-blue-500">.UZ</span>
-                </span>
-              </div>
-              <span className="text-[10px] text-zinc-400 tracking-wider uppercase font-medium">
-                Enterprise IT Systems
-              </span>
-            </div>
+            <Image
+              src="/isds-light.svg"
+              alt="ISDS.UZ"
+              width={160}
+              height={76}
+              priority
+              unoptimized
+              className="h-10 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_16px_rgba(54,129,195,0.25)]"
+            />
           </a>
 
           {/* Desktop Navigation */}

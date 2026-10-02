@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { IsdsLogo } from "@/components/isds-logo";
 import { Phone, ShieldCheck, ArrowUp, Send, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -32,21 +31,20 @@ export function Footer({ onOpenCallback }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Col 1 & 2: Brand & IT-Park Status */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3.5">
-              <IsdsLogo className="h-10 w-auto drop-shadow-[0_0_12px_rgba(59,130,246,0.25)]" />
-              <span className="text-xl font-bold tracking-tight text-white">
-                ISDS<span className="text-blue-500">.UZ</span>
-              </span>
-            </div>
+            <a href="#" className="inline-block group" aria-label="ISDS.UZ">
+              <Image
+                src="/isds-light.svg"
+                alt="ISDS.UZ"
+                width={160}
+                height={76}
+                unoptimized
+                className="h-11 md:h-12 w-auto object-contain drop-shadow-[0_0_14px_rgba(54,129,195,0.25)] transition-transform duration-200 group-hover:scale-105"
+              />
+            </a>
 
             <p className="text-zinc-400 text-sm max-w-sm leading-relaxed">
               IT системы для лидеров рынка. Поможем произвести автоматизацию бизнес-процессов и увеличить прибыль.
             </p>
-
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs text-zinc-300">
-              <ShieldCheck className="size-4 text-emerald-400" />
-              <span>Резиденты IT-park с 2021 г.</span>
-            </div>
           </div>
 
           {/* Col 3: Navigation */}
