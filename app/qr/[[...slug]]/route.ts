@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 // QR redirect mappings
 const QR_REDIRECT_MAP: Record<string, string> = {
   caselink: "https://caselink.uz/",
-  davomat: "https://isds.uz/",
+  davomat: "https://isds-davomat.vercel.app/",
   fincheck: "https://fincheck.uz/",
   scada: "https://energy-scada.uz/",
 };
